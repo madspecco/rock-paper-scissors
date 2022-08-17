@@ -92,11 +92,31 @@ function playRound(playerSelection, computerSelection) {
 
 // Create a function to play 5 rounds
 function game() {
-    for(let i = 1; i <= 5; i++) {
-        console.log("ROUND " + i +" BEGINS:");
-        playRound();
-        console.log("END OF ROUND " + i);
+    let player_score = 0;
+    let computer_score = 0;
+
+    for (let i = 1; i <= 5; i++) {
+
+        console.log("ROUND " + i + " BEGINS!");
+        let result = playRound();
+
+        if(result === "THE PLAYER WINS!") {
+            player_score++;
+            console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
+        }
+
+        if(result === "THE COMPUTER WINS! TAKE THAT HUMAN!") {
+            computer_score++;
+            console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
+        }
+
+        if(result === "ISSA TIE! FEEL THE TENSION!") {
+            console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
+        }
+
+        console.log("ROUND " + i + " IS OVER!");
     }
 }
+
 
 game();
