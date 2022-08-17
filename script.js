@@ -91,6 +91,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 // Create a function to play 5 rounds
+
 function game() {
     let player_score = 0;
     let computer_score = 0;
@@ -99,24 +100,35 @@ function game() {
 
         console.log("ROUND " + i + " BEGINS!");
         let result = playRound();
-
+    
         if(result === "THE PLAYER WINS!") {
             player_score++;
             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
         }
-
+    
         if(result === "THE COMPUTER WINS! TAKE THAT HUMAN!") {
             computer_score++;
             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
         }
-
+    
         if(result === "ISSA TIE! FEEL THE TENSION!") {
             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
         }
-
+    
         console.log("ROUND " + i + " IS OVER!");
     }
-}
 
+    if(player_score > computer_score) {
+        console.log("THE PLAYER WINS THE GAME :) !");
+    }
+
+    else if(player_score < computer_score) {
+        console.log("THE PLAYER LOST THE GAME :( !");
+    }
+
+    else {
+        console.log("UNBELIEVABLE! IT'S A TIE!")
+    }
+}
 
 game();
