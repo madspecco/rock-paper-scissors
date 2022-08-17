@@ -17,19 +17,22 @@ function getComputerChoice(computerSelection) {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+function getPlayerChoice(playerSelection) {
     let choice = prompt("Rock, Paper, Scissors?");
     // make choice case sensitive
     choice = choice[0].toUpperCase() + choice.slice(1, choice.length).toLowerCase();
-    
+        
     // failsafe
     if(choice !== 'Rock' && choice !== 'Paper' && choice !== 'Scissors') {
         alert("Whoops! Looks like that is not a valid choice.");
+        return 0;
     }
 
-    else {
-        console.log("ROUND BEGINS:");
-        playerSelection = choice;
+    else return 1;
+}
+
+function playRound(playerSelection, computerSelection) {
+        playerSelection = getPlayerChoice();
         //console.log("PLAYER SELECTS: " + playerSelection);
         computerSelection = getComputerChoice();
         //console.log("COMPUTER SELECTS: " + computerSelection);
@@ -86,10 +89,12 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+// Create a function to play 5 rounds
+function game() {
+    for(let i = 1; i <= 5; i++) {
+        playRound();
+        console.log("ROUND " + i +" BEGINS:");
+    }
 }
 
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
+game();
