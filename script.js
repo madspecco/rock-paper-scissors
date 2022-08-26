@@ -52,7 +52,7 @@ reset.addEventListener('click', function () {
     if(playerScore === 5 || computerScore === 5) {
         playerScore = 0;
         computerScore = 0;
-        divLog.innerHTML = "GAME RESET";
+        divLog.innerHTML = "AGAIN! AGAIN!";
         divLog.innerHTML += "<br/>";
         for(let btn = 0; btn < rps.length; btn++) {
             rps[btn].disabled = false;
@@ -86,20 +86,18 @@ function playRound(playerSelection, computerSelection) {
     else {
         if(playerSelection === 'Rock') {
             if(computerSelection === 'Rock') {
-                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML = "<br/>ROCK AGAINST ROCK!<br/>ISSA TIE!<br/>FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
     
             if(computerSelection === 'Paper') {
                 computerScore++;
-                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML = "<br/>PAPER BEATS ROCK!<br/>THE COMPUTER WINS!<br/>TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
 
                 if(computerScore === 5) {
-                    divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                    divLog.innerHTML = "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
                     reset.disabled = false;
                 }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
@@ -107,9 +105,8 @@ function playRound(playerSelection, computerSelection) {
     
             if(computerSelection === 'Scissors') {
                 playerScore++;
-                divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML = "<br/>ROCK BEATS SCISSORS!<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
 
                 if(playerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
@@ -122,7 +119,7 @@ function playRound(playerSelection, computerSelection) {
         if(playerSelection === 'Paper') {
             if(computerSelection === 'Rock') {
                 playerScore++;
-                divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML += "PAPER BEATS ROCK!<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
 
@@ -134,17 +131,15 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Paper') {
-                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML = "<br/>PAPER AGAINST PAPER!<br/>ISSA TIE!<br/>FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
     
             if(computerSelection === 'Scissors') {
                 computerScore++;
-                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML = "SCISSORS BEAT PAPER!<br/>THE COMPUTER WINS!<br/>TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
 
                 if(computerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
@@ -157,9 +152,8 @@ function playRound(playerSelection, computerSelection) {
         if(playerSelection === 'Scissors') {
             if(computerSelection === 'Rock') {
                 computerScore++;
-                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML = "ROCK BEATS SCISSORS!<br/>THE COMPUTER WINS!<br/>TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
 
                 if(computerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
@@ -170,9 +164,8 @@ function playRound(playerSelection, computerSelection) {
     
             if(computerSelection === 'Paper') {
                 playerScore++;
-                divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML = "SCISSORS BEAT PAPER!<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
 
                 if(playerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
@@ -182,9 +175,8 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Scissors') {
-                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML = "SCISSORS AGAINST SCISSORS!<br/>ISSA TIE!<br/>FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
-                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
         }

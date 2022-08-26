@@ -63,10 +63,13 @@ body {
     background-color: thistle;
 }
 
-.log {
+
+#gameLog{
     display: flex;
+    align-items: center;
     justify-content: center;
-    
+    text-align: center;
+
     height: 228px;
     width: 228px;
 }
