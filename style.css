@@ -15,22 +15,20 @@ body {
 .img-container {
     display: flex;
     justify-content: space-between;
+    margin: 4em;
 }
 
 .players {
     width: 228px;
     height: 228px;
-    margin-left: 4em;
-    margin-right: 4em;
 }
 
 .btn-container {
-     display: flex;
-    /* align-items: center;
-    justify-content: center;
-
-    margin: 2em;
-    gap: 53em; */ 
+    display: flex;
+    justify-content:space-between;
+    
+    margin-left: 4em;
+    margin-right: 4em;
 }
 
 .rps-container-player {
@@ -49,6 +47,8 @@ body {
     background-color: #6e5dcf;
     background-color: #c27dfc;
     background-color: #eaebed; */
+    width: 10em;
+    height: 4em;
 }
 
 .reset-btn {
@@ -61,6 +61,8 @@ body {
 
 #reset {
     background-color: thistle;
+    width: 10em;
+    height: 4em;
 }
 
 
