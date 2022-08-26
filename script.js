@@ -1,10 +1,6 @@
 /* begin with a function called getComputerChoice that
    will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’ */
 
-
-
-// (you can keep the console.logs for this step) 
-
 function getComputerChoice(computerSelection) {
     computerSelection = Math.ceil(Math.random() * 3);
 
@@ -21,14 +17,15 @@ function getComputerChoice(computerSelection) {
     }
 }
 
-/* Create three buttons, one for each selection. */
-/* Add an event listener to the buttons that call your playRound function */
+/* three buttons, one for each selection. */
+/* Add an event listener to the buttons that calls playRound function */
 /* with the correct playerSelection every time a button is clicked. */
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const reset = document.querySelector('#reset');
+const rps = document.querySelectorAll("#rock, #paper, #scissors");
 
 
 reset.addEventListener('click', function () {
@@ -37,6 +34,9 @@ reset.addEventListener('click', function () {
         computerScore = 0;
         divLog.innerHTML = "GAME RESET";
         divLog.innerHTML += "<br/>";
+        for(let btn = 0; btn < rps.length; btn++) {
+            rps[btn].disabled = false;
+        }
     }
 
     else {
@@ -76,18 +76,16 @@ function playRound(playerSelection, computerSelection) {
     console.log("PLAYER SELECTS: " + playerSelection);
     console.log("COMPUTER SELECTS: " + computerSelection);
 
-    if(playerScore === 5) {
-        divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
-    }
-
-    else if(computerScore === 5) {
-        divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+    if(playerScore === 5 || computerScore === 5) {
+        divLog.innerHTML += "<br/> GAME OVER! PLEASE RESET!";
+        for(let btn = 0; btn < rps.length; btn++) {
+            rps[btn].disabled = true;
+        }
     }
 
     else {
         if(playerSelection === 'Rock') {
             if(computerSelection === 'Rock') {
-                // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
@@ -95,36 +93,44 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Paper') {
-                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
                 computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(computerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
     
             if(computerSelection === 'Scissors') {
-                // console.log("THE PLAYER WINS!");
                 playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(playerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                }
                 return "THE PLAYER WINS!";
             }
         }
     
         if(playerSelection === 'Paper') {
             if(computerSelection === 'Rock') {
-                // console.log("THE PLAYER WINS!");
                 playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(playerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                }
                 return "THE PLAYER WINS!";
             }
     
             if(computerSelection === 'Paper') {
-                // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
@@ -132,36 +138,44 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Scissors') {
-                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
                 computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(computerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
         }
     
         if(playerSelection === 'Scissors') {
             if(computerSelection === 'Rock') {
-                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
                 computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(computerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
     
             if(computerSelection === 'Paper') {
-                // console.log("THE PLAYER WINS!");
                 playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
+
+                if(playerScore === 5) {
+                    divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                }
                 return "THE PLAYER WINS!";
             }
     
             if(computerSelection === 'Scissors') {
-                // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 divLog.innerHTML += "<br/>";
