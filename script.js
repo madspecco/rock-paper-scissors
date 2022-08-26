@@ -42,102 +42,77 @@ scissors.addEventListener('click', function () {
     playRound('Scissors', getComputerChoice());
 });
 
+/* Add a div for displaying results and change all of your console.logs
+into DOM methods.*/
+
+const divLog = document.querySelector('div');
+divLog.style.border = 'solid #000000';
+divLog.style.backgroundColor = 'pink';
 
 function playRound(playerSelection, computerSelection) {
         console.log("PLAYER SELECTS: " + playerSelection);
         console.log("COMPUTER SELECTS: " + computerSelection);
-
         if(playerSelection === 'Rock') {
             if(computerSelection === 'Rock') {
-                console.log("ISSA TIE! FEEL THE TENSION!");
+                // console.log("ISSA TIE! FEEL THE TENSION!");
+                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
 
             if(computerSelection === 'Paper') {
-                console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
 
             if(computerSelection === 'Scissors') {
-                console.log("THE PLAYER WINS!");
+                // console.log("THE PLAYER WINS!");
+                divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 return "THE PLAYER WINS!";
             }
         }
 
         if(playerSelection === 'Paper') {
             if(computerSelection === 'Rock') {
-                console.log("THE PLAYER WINS!");
+                // console.log("THE PLAYER WINS!");
+                
+                divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 return "THE PLAYER WINS!";
             }
 
             if(computerSelection === 'Paper') {
-                console.log("ISSA TIE! FEEL THE TENSION!");
+                // console.log("ISSA TIE! FEEL THE TENSION!");
+                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
 
             if(computerSelection === 'Scissors') {
-                console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
         }
 
         if(playerSelection === 'Scissors') {
             if(computerSelection === 'Rock') {
-                console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
 
             if(computerSelection === 'Paper') {
-                console.log("THE PLAYER WINS!");
+                // console.log("THE PLAYER WINS!");
+                divLog.innerHTML += "<br/>THE PLAYER WINS!";
                 return "THE PLAYER WINS!";
             }
 
             if(computerSelection === 'Scissors') {
-                console.log("ISSA TIE! FEEL THE TENSION!");
+                // console.log("ISSA TIE! FEEL THE TENSION!");
+                divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
         }
     }
-    
-// Create a function to play 5 rounds
 
-// function game() {
-//     let player_score = 0;
-//     let computer_score = 0;
 
-//     for (let i = 1; i <= 5; i++) {
 
-//         console.log("ROUND " + i + " BEGINS!");
-//         let result = playRound();
-    
-//         if(result === "THE PLAYER WINS!") {
-//             player_score++;
-//             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
-//         }
-    
-//         if(result === "THE COMPUTER WINS! TAKE THAT HUMAN!") {
-//             computer_score++;
-//             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
-//         }
-    
-//         if(result === "ISSA TIE! FEEL THE TENSION!") {
-//             console.log("PLAYER: " + player_score + " COMPUTER: " + computer_score);
-//         }
-    
-//         console.log("ROUND " + i + " IS OVER!");
-//     }
-
-//     if(player_score > computer_score) {
-//         console.log("THE PLAYER WINS THE GAME :) !");
-//     }
-
-//     else if(player_score < computer_score) {
-//         console.log("THE PLAYER LOST THE GAME :( !");
-//     }
-
-//     else {
-//         console.log("UNBELIEVABLE! IT'S A TIE!")
-//     }
-// }
-
-// game();
