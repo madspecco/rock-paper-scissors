@@ -27,6 +27,26 @@ const scissors = document.querySelector('#scissors');
 const reset = document.querySelector('#reset');
 const rps = document.querySelectorAll("#rock, #paper, #scissors");
 
+/* Add a div for displaying results and change all of your console.logs
+into DOM methods.*/
+
+const divLog = document.querySelector('#gameLog');
+divLog.style.border = 'solid #000000';
+divLog.style.backgroundColor = 'pink';
+
+
+rock.addEventListener('click', function () {
+    playRound('Rock', getComputerChoice());
+});
+
+paper.addEventListener('click', function () {
+    playRound('Paper', getComputerChoice());
+});
+
+scissors.addEventListener('click', function () {
+    playRound('Scissors', getComputerChoice());
+});
+
 
 reset.addEventListener('click', function () {
     if(playerScore === 5 || computerScore === 5) {
@@ -42,39 +62,19 @@ reset.addEventListener('click', function () {
     else {
         divLog.innerHTML += "<br/>THE GAME IS NOT OVER YET!";
         divLog.innerHTML += "<br/>";
+        reset.disabled = true;
     }
     
 });
-
-rock.addEventListener('click', function () {
-    playRound('Rock', getComputerChoice());
-});
-
-paper.addEventListener('click', function () {
-    playRound('Paper', getComputerChoice());
-});
-
-scissors.addEventListener('click', function () {
-    playRound('Scissors', getComputerChoice());
-});
-
-/* Add a div for displaying results and change all of your console.logs
-into DOM methods.*/
-
-const divLog = document.querySelector('div');
-divLog.style.border = 'solid #000000';
-divLog.style.backgroundColor = 'pink';
 
 /* Display the running score, and announce a winner of the game
 once one player reaches 5 points. */
 var playerScore = 0;
 var computerScore = 0;
 
-
-
 function playRound(playerSelection, computerSelection) {
-    console.log("PLAYER SELECTS: " + playerSelection);
-    console.log("COMPUTER SELECTS: " + computerSelection);
+    // console.log("PLAYER SELECTS: " + playerSelection);
+    // console.log("COMPUTER SELECTS: " + computerSelection);
 
     if(playerScore === 5 || computerScore === 5) {
         divLog.innerHTML += "<br/> GAME OVER! PLEASE RESET!";
@@ -100,6 +100,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(computerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                    reset.disabled = false;
                 }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
@@ -112,6 +113,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(playerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                    reset.disabled = false;
                 }
                 return "THE PLAYER WINS!";
             }
@@ -126,6 +128,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(playerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                    reset.disabled = false;
                 }
                 return "THE PLAYER WINS!";
             }
@@ -145,6 +148,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(computerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                    reset.disabled = false;
                 }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
@@ -159,6 +163,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(computerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+                    reset.disabled = false;
                 }
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
@@ -171,6 +176,7 @@ function playRound(playerSelection, computerSelection) {
 
                 if(playerScore === 5) {
                     divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+                    reset.disabled = false;
                 }
                 return "THE PLAYER WINS!";
             }
