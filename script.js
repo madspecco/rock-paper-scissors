@@ -49,70 +49,106 @@ const divLog = document.querySelector('div');
 divLog.style.border = 'solid #000000';
 divLog.style.backgroundColor = 'pink';
 
+/* Display the running score, and announce a winner of the game
+once one player reaches 5 points. */
+var playerScore = 0;
+var computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
-        console.log("PLAYER SELECTS: " + playerSelection);
-        console.log("COMPUTER SELECTS: " + computerSelection);
+    console.log("PLAYER SELECTS: " + playerSelection);
+    console.log("COMPUTER SELECTS: " + computerSelection);
+
+    if(playerScore === 5) {
+        divLog.innerHTML += "<br/> GAME OVER! THE PLAYER WINS!";
+    }
+
+    else if(computerScore === 5) {
+        divLog.innerHTML += "<br/> GAME OVER! THE COMPUTER WINS! WHAT A SHAME FOR HUMANITY!";
+    }
+
+    else {
         if(playerSelection === 'Rock') {
             if(computerSelection === 'Rock') {
                 // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
-
+    
             if(computerSelection === 'Paper') {
                 // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
-
+    
             if(computerSelection === 'Scissors') {
                 // console.log("THE PLAYER WINS!");
+                playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE PLAYER WINS!";
             }
         }
-
+    
         if(playerSelection === 'Paper') {
             if(computerSelection === 'Rock') {
                 // console.log("THE PLAYER WINS!");
-                
+                playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE PLAYER WINS!";
             }
-
+    
             if(computerSelection === 'Paper') {
                 // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
-
+    
             if(computerSelection === 'Scissors') {
                 // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
         }
-
+    
         if(playerSelection === 'Scissors') {
             if(computerSelection === 'Rock') {
                 // console.log("THE COMPUTER WINS! TAKE THAT HUMAN!");
+                computerScore++;
                 divLog.innerHTML += "<br/>THE COMPUTER WINS! TAKE THAT HUMAN!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE COMPUTER WINS! TAKE THAT HUMAN!";
             }
-
+    
             if(computerSelection === 'Paper') {
                 // console.log("THE PLAYER WINS!");
+                playerScore++;
                 divLog.innerHTML += "<br/>THE PLAYER WINS!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "THE PLAYER WINS!";
             }
-
+    
             if(computerSelection === 'Scissors') {
                 // console.log("ISSA TIE! FEEL THE TENSION!");
                 divLog.innerHTML += "<br/>ISSA TIE! FEEL THE TENSION!";
+                divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += "<br/>";
                 return "ISSA TIE! FEEL THE TENSION!"
             }
         }
     }
-
-
-
+}
