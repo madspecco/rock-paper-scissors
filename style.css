@@ -4,23 +4,41 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color: #c27dfc;
+        /* COLOR SCHEME
+    background-color: #243B67;
+    background-color: #6e5dcf;
+    background-color: #c27dfc;
     background-color: #eaebed;
+    */
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    background-color: #243b67;
+    
 }
 
 #title {
     text-align: center;
     margin: 64px;
+    color: #c27dfc;
 }
+
 
 .img-container {
     display: flex;
     justify-content: space-between;
     margin: 4em;
+    margin-left: 8em;
+    margin-right: 8em;
 }
 
 .players {
     width: 228px;
     height: 228px;
+    background-color: #c27dfc;
 }
 
 .btn-container {
@@ -42,11 +60,8 @@ body {
 }
 
 .rps {
-    background-color:aquamarine ;
-    /* background-color: #243B67;
-    background-color: #6e5dcf;
-    background-color: #c27dfc;
-    background-color: #eaebed; */
+    color: #c27dfc;
+    background-color:#243b67 ;
     width: 10em;
     height: 4em;
 }
@@ -60,7 +75,8 @@ body {
 }
 
 #reset {
-    background-color: thistle;
+    color: #c27dfc;
+    background-color:#243b67 ;
     width: 10em;
     height: 4em;
 }

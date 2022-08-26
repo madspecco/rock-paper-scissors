@@ -18,22 +18,17 @@ function getComputerChoice(computerSelection) {
 }
 
 /* three buttons, one for each selection. */
-/* Add an event listener to the buttons that calls playRound function */
-/* with the correct playerSelection every time a button is clicked. */
-
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const reset = document.querySelector('#reset');
 const rps = document.querySelectorAll("#rock, #paper, #scissors");
 
-/* Add a div for displaying results and change all of your console.logs
-into DOM methods.*/
-
+/* Add a div for displaying results */
 const divLog = document.querySelector('#gameLog');
-divLog.style.border = 'solid #000000';
-divLog.style.backgroundColor = 'pink';
 
+/* Add an event listener to the buttons that calls playRound function */
+/* with the correct playerSelection every time a button is clicked. */
 
 rock.addEventListener('click', function () {
     playRound('Rock', getComputerChoice());
