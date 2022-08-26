@@ -28,7 +28,23 @@ function getComputerChoice(computerSelection) {
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const reset = document.querySelector('#reset');
 
+
+reset.addEventListener('click', function () {
+    if(playerScore === 5 || computerScore === 5) {
+        playerScore = 0;
+        computerScore = 0;
+        divLog.innerHTML = "GAME RESET";
+        divLog.innerHTML += "<br/>";
+    }
+
+    else {
+        divLog.innerHTML += "<br/>THE GAME IS NOT OVER YET!";
+        divLog.innerHTML += "<br/>";
+    }
+    
+});
 
 rock.addEventListener('click', function () {
     playRound('Rock', getComputerChoice());
@@ -53,6 +69,8 @@ divLog.style.backgroundColor = 'pink';
 once one player reaches 5 points. */
 var playerScore = 0;
 var computerScore = 0;
+
+
 
 function playRound(playerSelection, computerSelection) {
     console.log("PLAYER SELECTS: " + playerSelection);
