@@ -21,6 +21,11 @@ function getComputerChoice(computerSelection) {
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+
+const rockPC = document.querySelector('#rock-pc');
+const paperPC = document.querySelector('#paper-pc');
+const scissorsPC = document.querySelector('#scissors-pc');
+
 const reset = document.querySelector('#reset');
 const rps = document.querySelectorAll("#rock, #paper, #scissors");
 
@@ -80,13 +85,17 @@ function playRound(playerSelection, computerSelection) {
 
     else {
         if(playerSelection === 'Rock') {
+            rock.classList.add('selected');
+            console.log(rock.propertyName);
             if(computerSelection === 'Rock') {
+                rockPC.classList.add('selected');
                 divLog.innerHTML = "<br/> ROCK AGAINST ROCK! <br/> ISSA TIE! <br/> FEEL THE TENSION!";
-                divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
+                divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`
                 return "ISSA TIE! FEEL THE TENSION!"
             }
     
             if(computerSelection === 'Paper') {
+                paperPC.classList.add('selected');
                 computerScore++;
                 divLog.innerHTML = "<br/> PAPER BEATS ROCK! <br/> THE COMPUTER WINS! <br/> TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
@@ -99,6 +108,7 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Scissors') {
+                scissorsPC.classList.add('selected');
                 playerScore++;
                 divLog.innerHTML = "<br/> ROCK BEATS SCISSORS! <br/> THE PLAYER WINS!";
                 divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
