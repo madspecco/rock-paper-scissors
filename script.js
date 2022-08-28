@@ -76,6 +76,16 @@ function playRound(playerSelection, computerSelection) {
     // console.log("PLAYER SELECTS: " + playerSelection);
     // console.log("COMPUTER SELECTS: " + computerSelection);
 
+    // Resetting button effects
+    rock.classList.remove('selected');
+    paper.classList.remove('selected');
+    scissors.classList.remove('selected');
+
+    rockPC.classList.remove('selected');
+    paperPC.classList.remove('selected');
+    scissorsPC.classList.remove('selected');
+
+    // Setting Game Over Condition
     if(playerScore === 5 || computerScore === 5) {
         divLog.innerHTML += "<br/> GAME OVER! PLEASE RESET!";
         for(let btn = 0; btn < rps.length; btn++) {
@@ -122,7 +132,9 @@ function playRound(playerSelection, computerSelection) {
         }
     
         if(playerSelection === 'Paper') {
+            paper.classList.add('selected');
             if(computerSelection === 'Rock') {
+                rockPC.classList.add('selected');
                 playerScore++;
                 divLog.innerHTML = "PAPER BEATS ROCK! <br/> THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
@@ -135,12 +147,14 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Paper') {
+                paperPC.classList.add('selected');
                 divLog.innerHTML = "<br/> PAPER AGAINST PAPER! <br/> ISSA TIE! <br/> FEEL THE TENSION!";
                 divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 return "ISSA TIE! FEEL THE TENSION!"
             }
     
             if(computerSelection === 'Scissors') {
+                scissorsPC.classList.add('selected');
                 computerScore++;
                 divLog.innerHTML = "SCISSORS BEAT PAPER! <br/> THE COMPUTER WINS! <br/> TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
@@ -154,7 +168,9 @@ function playRound(playerSelection, computerSelection) {
         }
     
         if(playerSelection === 'Scissors') {
+            scissors.classList.add('selected');
             if(computerSelection === 'Rock') {
+                rockPC.classList.add('selected');
                 computerScore++;
                 divLog.innerHTML = "ROCK BEATS SCISSORS! <br/> THE COMPUTER WINS! <br/> TAKE THAT HUMAN!";
                 divLog.innerHTML += `<br/> PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
@@ -167,6 +183,7 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Paper') {
+                paperPC.classList.add('selected');
                 playerScore++;
                 divLog.innerHTML = "SCISSORS BEAT PAPER!<br/>THE PLAYER WINS!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
@@ -179,6 +196,7 @@ function playRound(playerSelection, computerSelection) {
             }
     
             if(computerSelection === 'Scissors') {
+                scissorsPC.classList.add('selected');
                 divLog.innerHTML = "SCISSORS AGAINST SCISSORS!<br/>ISSA TIE!<br/>FEEL THE TENSION!";
                 divLog.innerHTML += `<br/>PLAYER: ${playerScore} COMPUTER: ${computerScore}`;
                 return "ISSA TIE! FEEL THE TENSION!"
