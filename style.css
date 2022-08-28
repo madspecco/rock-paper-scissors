@@ -5,12 +5,6 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     background-color: #c27dfc;
-        /* COLOR SCHEME
-    background-color: #243B67;
-    background-color: #6e5dcf;
-    background-color: #c27dfc;
-    background-color: #eaebed;
-    */
 }
 
 .titleContainer {
@@ -28,30 +22,49 @@ body {
 
 
     font-size: 2.5rem;
+    font-weight: bold;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-.img-container {
+.centerLog {
     display: flex;
-    justify-content: space-between;
-    margin: 4rem;
-    margin-left: 12rem;
-    margin-right: 12rem;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2.5rem;
+    margin-bottom: 8rem;
+    gap: 13rem;
 }
 
-.players {
-    width: 228px;
-    height: 228px;
-    background-color: #c27dfc;
+#gameLog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 14.25rem;
+    width: 33rem;
+
+    animation: fadeIn 2.5s;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: #243b67;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.player-img {
+    object-fit: cover;
+    width: 14.25rem;
+    height: 14.25rem;
 }
 
 .btn-container {
     display: flex;
     justify-content:space-between;
     
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 .rps-container-player {
@@ -67,12 +80,11 @@ body {
 
 
 .rps {
-    color: #c27dfc;
-    background-color:#243b67 ;
+    background-color:#c27dfc ;
     transition: all .07s ease;
 
-    width: 10rem;
-    height: 4rem;
+    width: 7.5rem;
+    height: 6rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2rem;
 
@@ -82,6 +94,25 @@ body {
 
 #rock, #paper, #scissors, #reset {
     cursor: pointer;
+}
+
+#rock, #rock-pc {
+    background-image: url(./images/therock-small.png);
+    /* 322px 240px */
+    background-size: contain;
+    background-position: center;
+}
+
+#paper, #paper-pc {
+    background-image: url(./images/thepaper-small.png);
+    background-size: contain;
+    background-position: center;
+}
+
+#scissors, #scissors-pc {
+    background-image: url(./images/thescissors-small.png);
+    background-size: contain;
+    background-position: center;
 }
 
 #rock:hover, #paper:hover, #scissors:hover {
@@ -106,6 +137,7 @@ body {
     justify-content: center;
 
     margin: 4rem;
+    margin-top: 6rem;
 }
 
 #reset {
@@ -116,6 +148,7 @@ body {
     
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2rem;
+    font-weight: bold;
     border-radius: 0.5rem;
     border:solid .25rem #6e5dcf;
 }
@@ -128,23 +161,6 @@ body {
     box-shadow: 0px 0px 20px #eaebed;
 }
 
-
-
-#gameLog{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    height: 228px;
-    width: 528px;
-
-    animation: fadeIn 2.5s;
-
-    font-size: 2rem;
-    color: #243b67;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 @keyframes fadeIn {
     0% {opacity: 0;}
@@ -159,9 +175,18 @@ body {
     color:#c27dfc;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 3rem;
+    font-weight: 500;
 
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+#footer-txt {
+    font-weight: bold;
+}
+
+.github-footer {
+    color: #eaebed;
 }
