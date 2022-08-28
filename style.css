@@ -71,18 +71,22 @@ body {
 }
 
 .selected {
-    transform: scale(2);
+    transform: scale(1.1);
     border: solid;
-    border-color: red;
-    box-shadow: 0 0 .5rem black;
+    border-color: #eaebed;
+    box-shadow: 0 0 .5rem #eaebed;
 }
 
 .rps:hover {
     opacity: 1; 
-    /*Glow*/
+    /* hover glow */
     -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
     -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
     box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+
+.rps:disabled {
+    color: black;
 }
 
 .reset-btn {
@@ -103,7 +107,7 @@ body {
 
 #reset:hover {
     opacity: 1; 
-    /*Glow*/
+    /* hover glow */
     -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
     -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
     box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
