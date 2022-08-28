@@ -16,15 +16,19 @@ body {
 .titleContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #243b67;
-    
+    height: 6em;
 }
 
 #title {
     text-align: center;
     margin: 64px;
     color: #c27dfc;
-    
+
+
+    font-size: 2.5em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
@@ -62,12 +66,30 @@ body {
 }
 
 
-.rps, #rock, #paper, #scissors, #rock-pc, #paper-pc, #scissors-pc {
+.rps {
     color: #c27dfc;
     background-color:#243b67 ;
-    width: 10em;
-    height: 4em;
     transition: all .07s ease;
+
+    width: 10rem;
+    height: 4rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+
+    border-radius: 0.5rem;
+    border:solid .25rem #6e5dcf;
+}
+
+#rock, #paper, #scissors, #reset {
+    cursor: pointer;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+    opacity: 1; 
+    /* hover glow */
+    -webkit-box-shadow: 0px 0px 20px #eaebed;
+    -moz-box-shadow: 0px 0px 20px #eaebed;
+    box-shadow: 0px 0px 20px #eaebed;
 }
 
 .selected {
@@ -77,17 +99,6 @@ body {
     box-shadow: 0 0 .5rem #eaebed;
 }
 
-.rps:hover {
-    opacity: 1; 
-    /* hover glow */
-    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-}
-
-.rps:disabled {
-    color: black;
-}
 
 .reset-btn {
     display: flex;
@@ -100,17 +111,21 @@ body {
 #reset {
     color: #c27dfc;
     background-color:#243b67 ;
-    width: 10em;
-    height: 4em;
+    width: 10rem;
+    height: 4rem;
     
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    border-radius: 0.5rem;
+    border:solid .25rem #6e5dcf;
 }
 
 #reset:hover {
     opacity: 1; 
     /* hover glow */
-    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -webkit-box-shadow: 0px 0px 20px #eaebed;
+    -moz-box-shadow: 0px 0px 20px #eaebed;
+    box-shadow: 0px 0px 20px #eaebed;
 }
 
 
@@ -122,5 +137,16 @@ body {
     text-align: center;
 
     height: 228px;
-    width: 228px;
+    width: 528px;
+
+    animation: fadeIn 2.5s;
+
+    font-size: 2em;
+    color: #243b67;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
