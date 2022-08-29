@@ -47,7 +47,7 @@ scissors.addEventListener('click', function () {
     playRound('Scissors', getComputerChoice());
 });
 
-
+/* Event Listener for the reset button */
 reset.addEventListener('click', function () {
     if(playerScore === 5 || computerScore === 5) {
         playerScore = 0;
@@ -73,9 +73,6 @@ var playerScore = 0;
 var computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-    // console.log("PLAYER SELECTS: " + playerSelection);
-    // console.log("COMPUTER SELECTS: " + computerSelection);
-
     // Resetting button effects
     rock.classList.remove('selected');
     paper.classList.remove('selected');
